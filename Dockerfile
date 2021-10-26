@@ -3,7 +3,7 @@ FROM devopsedu/webapp
 MAINTAINER Aravindh
 
 #Update Repository
-RUN apt-get update
+#RUN apt-get update
 
 #Install Apache
 RUN apt-get install apache2
