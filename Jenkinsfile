@@ -1,5 +1,11 @@
 pipeline {
- agent any
+	environment {
+        registry = "aravindhdeva5/devopsproj1" 
+        registryCredential = 'dockerhub'
+    }
+agent {
+  label 'slave'
+}
  environment {
   DOCKER = credentials ('dockerhub')
  }
