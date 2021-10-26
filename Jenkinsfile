@@ -23,6 +23,7 @@ pipeline {
         sudo docker run -d aravindhdeva5/devopsproj1:1111.$BUILD_NUMBER
 	sudo docker swarm init
 	sudo docker service create --name devopsproj1 --mode global -d -p 9000:80 aravindhdeva5/devopsproj1:1111.$BUILD_NUMBER
+	'''
    }
   }
   stage ('update kubernetes deployment') {
