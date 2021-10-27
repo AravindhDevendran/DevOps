@@ -1,13 +1,11 @@
 pipeline {
-	environment {
-        registry = "aravindhdeva5/devopsproj1" 
-        registryCredential = 'dockerhub'
-    }
 agent {
   label 'slave'
 }
  environment {
   DOCKER = credentials ('dockerhub')
+registry = "aravindhdeva5/devopsproj1" 
+        registryCredential = 'dockerhub'
  }
  stages {
   stage ('create docker image') {
