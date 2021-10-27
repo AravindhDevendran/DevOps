@@ -15,5 +15,4 @@ stage ('Delete Docker Container and global service') {
 	'''
    }
   }
- }
 }
