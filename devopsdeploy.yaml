@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: devopsdeploy
+spec:
+ replicas: 3
+ template: 
+   metadata: 
+    labels:
+     owner: devopsdeploy
+   spec: 
+    containers:
+    - name: DevopsProj1
+      image: aravindhdeva5/devopsproj1:1111.$BUILD_NUMBER
+ selector: 
+  matchLabels: 
+   owner: devopsdeploy
