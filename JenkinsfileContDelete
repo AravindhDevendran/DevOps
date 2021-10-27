@@ -11,7 +11,7 @@ registry = "aravindhdeva5/devopsproj1"
 stage ('Delete Docker Container and global service') {
    steps {
     sh '''
-        sudo docker container delete -f DevopsDockerContainer
+        sudo docker container rm -f DevopsDockerContainer
       	sudo docker swarm leave -f
 	'''
    }
