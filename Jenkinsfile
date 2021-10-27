@@ -24,7 +24,7 @@ registry = "aravindhdeva5/devopsproj1"
   stage ('Run Docker Container and global service') {
    steps {
     sh '''
-        sudo docker run -d DevopsDockerContainer aravindhdeva5/devopsproj1:1111.$BUILD_NUMBER
+        sudo docker run -d --name DevopsDockerContainer aravindhdeva5/devopsproj1:1111.$BUILD_NUMBER
 	#sudo docker swarm leave -f
 	sudo docker swarm init
 	sudo docker service create --name devopsproj1 --mode global -d -p 9000:80 aravindhdeva5/devopsproj1:1111.$BUILD_NUMBER
