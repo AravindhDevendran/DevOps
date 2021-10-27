@@ -1,5 +1,5 @@
 - name: "This is for docker install in slave node"
-  hosts: all
+  hosts: localhost
   tasks:
   - name: Install docker.
     package:
