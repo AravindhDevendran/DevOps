@@ -32,7 +32,10 @@ registry = "aravindhdeva5/devopsproj1"
   }
   stage ('update kubernetes deployment') {
    steps {
-    sh 'kubectl set image deployment devopsproj1 container=aravindhdeva5/devopsproj1:1111.$BUILD_NUMBER --record'
+    sh '''
+    	  sudo apt install -y kubelet kubeadm kubectl
+	  sudo kubectl set image deployment devopsproj1 container=aravindhdeva5/devopsproj1:1111.$BUILD_NUMBER --record'
+	'''
    }
   }
  }
