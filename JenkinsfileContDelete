@@ -1,0 +1,19 @@
+pipeline {
+agent {
+  label 'slave'
+}
+ environment {
+  DOCKER = credentials ('dockerhub')
+registry = "aravindhdeva5/devopsproj1" 
+        registryCredential = 'dockerhub'
+ }
+stage ('Delete Docker Container and global service') {
+   steps {
+    sh '''
+        sudo docker container delete -f DevopsDockerContainer
+      	sudo docker swarm leave -f
+	'''
+   }
+  }
+ }
+}
