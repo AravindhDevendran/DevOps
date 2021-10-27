@@ -31,13 +31,5 @@ registry = "aravindhdeva5/devopsproj1"
 	'''
    }
   }
-  stage ('update kubernetes deployment') {
-   steps {
-    sh '''
-    	  sudo apt install -y kubelet kubeadm kubectl
-	  sudo kubectl apply -f devopsdeploy.yaml'
-	'''
-   }
-  }
  }
 }
