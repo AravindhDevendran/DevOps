@@ -1,0 +1,17 @@
+pipeline {
+agent {
+  label 'slave'
+}
+ environment {
+  DOCKER = credentials ('dockerhub')
+registry = "aravindhdeva5/devopsproj1" 
+        registryCredential = 'dockerhub'
+ }
+ stages {
+  stage ('install docker using ansible') {
+   steps {
+    sh 'sudo ansible-playbook dockerplaybook.yaml'
+   }
+  }
+ }
+}
